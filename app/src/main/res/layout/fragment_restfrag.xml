@@ -18,6 +18,7 @@
             android:layout_height="match_parent"
             android:id="@+id/rv_users"
             tools:listitem="@layout/item_users"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,18 +2,30 @@ package com.example.wagba;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.wagba.databinding.FragmentLoginBinding;
+import com.example.wagba.databinding.FragmentRestfragBinding;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Restfrag#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class Restfrag extends Fragment {
+    RecyclerView recyclerView;
+    ArrayList<UsersModel> usersModels=new ArrayList<>();
+    FragmentRestfragBinding fbind;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -58,7 +70,30 @@ public class Restfrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_restfrag, container, false);
+        fbind = FragmentRestfragBinding.inflate(getLayoutInflater());
+        View view = fbind.getRoot();
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        usersModels.add(new UsersModel("Ahmed","11"));
+        usersModels.add(new UsersModel("moahmed","54"));
+        usersModels.add(new UsersModel("ayman","22"));
+        usersModels.add(new UsersModel("mahmoud","23"));
+        usersModels.add(new UsersModel("mohamed","65"));
+        usersModels.add(new UsersModel("Ahmed","44"));
+        usersModels.add(new UsersModel("mahmoud","27"));
+
+        UsersAdapter usersAdapter=new UsersAdapter(usersModels);
+        fbind.rvUsers.setAdapter(usersAdapter);
+    }
+    public void onDestroyView() {
+        super.onDestroyView();
+        fbind = null;
     }
 }

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 ActivityMainBinding binding;
     //RecyclerView recyclerView;
-Button logbut,regbut;
+
 
    // ArrayList<UsersModel> usersModels=new ArrayList<>();
     @Override
