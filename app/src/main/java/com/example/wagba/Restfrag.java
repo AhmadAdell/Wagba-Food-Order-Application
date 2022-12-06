@@ -81,12 +81,12 @@ public class Restfrag extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        usersModels.add(new UsersModel("Mac","hi"));
-        usersModels.add(new UsersModel("KFC","54"));
-        usersModels.add(new UsersModel("Abo Mazen","22"));
-        usersModels.add(new UsersModel("Ezz El Monofy","10"));
-        usersModels.add(new UsersModel("PaPa Jones","27"));
-        usersModels.add(new UsersModel("Cinnabon","100"));
+        usersModels.add(new UsersModel("Mac","delicious Burger Sandwiches!"));
+        usersModels.add(new UsersModel("KFC","Fried Chicken with a secret recipe!"));
+        usersModels.add(new UsersModel("Abo Mazen","your facorite shawerma!"));
+        usersModels.add(new UsersModel("Ezz El Monofy","kebda and sgo2!"));
+        usersModels.add(new UsersModel("PaPa Jones","pick your pizza topings!"));
+        usersModels.add(new UsersModel("Cinnabon","the Best Cinnamon Roll!"));
 
 
         UsersAdapter usersAdapter=new UsersAdapter(usersModels);
