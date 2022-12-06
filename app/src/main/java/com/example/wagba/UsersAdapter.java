@@ -9,19 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.wagba.UsersModel;
-
-import java.util.ArrayList;
-
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.Viewholder> {
@@ -48,6 +35,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.Viewholder> 
         UsersModel usersModel=   usersModelsinternal.get(position);
         holder.name.setText(usersModel.getName());
         holder.age.setText(usersModel.getAge());
+
     }
 
     @Override

@@ -14,11 +14,10 @@ import com.example.wagba.databinding.ActivityMainBinding;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
 ActivityMainBinding binding;
-    //RecyclerView recyclerView;
 
 
-   // ArrayList<UsersModel> usersModels=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,17 +29,6 @@ ActivityMainBinding binding;
         FragmentTransaction ft=fm.beginTransaction();
         ft.replace(R.id.logfragmain,new LoginFrag());
         ft.commit();
-//        usersModels.add(new UsersModel("Ahmed","11"));
-//        usersModels.add(new UsersModel("moahmed","54"));
-//        usersModels.add(new UsersModel("ayman","22"));
-//        usersModels.add(new UsersModel("mahmoud","23"));
-//        usersModels.add(new UsersModel("mohamed","65"));
-//        usersModels.add(new UsersModel("Ahmed","44"));
-//        usersModels.add(new UsersModel("mahmoud","27"));
-//
-//
-//
-//
-//        UsersAdapter usersAdapter=new UsersAdapter(usersModels);
+
     }
 }

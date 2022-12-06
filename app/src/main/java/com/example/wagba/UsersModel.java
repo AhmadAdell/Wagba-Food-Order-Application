@@ -1,4 +1,5 @@
 package com.example.wagba;
+
 public class UsersModel {
     private String name;
     private String age;
