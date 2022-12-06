@@ -25,12 +25,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tool_bar"
-        android:background="?attr/colorPrimary"
+        android:background="@color/jg"
         android:elevation="6dp"
         app:tabTextColor="@color/white"
-        app:tabSelectedTextColor="@color/purple_200"
+        app:tabGravity="fill"
+        app:tabInlineLabel="true"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/black"
         android:minHeight="?attr/actionBarSize"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+        app:tabTextAppearance="@style/customedesign"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_paper"

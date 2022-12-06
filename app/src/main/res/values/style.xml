@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+
+
+    <style name="customedesign" parent="TextAppearance.Design.Tab">
+
+
+        <item name="android:textSize">
+            10sp
+        </item>
+
+    </style>
+
+</resources>
