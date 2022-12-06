@@ -1,12 +1,30 @@
 package com.example.wagba;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.viewpager.widget.ViewPager;
+
+import com.example.wagba.databinding.FragmentNavbarBinding;
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.wagba.databinding.FragmentLoginBinding;
+import com.example.wagba.databinding.FragmentNavbarBinding;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +32,12 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class navbar extends Fragment {
+ FragmentNavbarBinding bind;
+
+
+    @NonNull
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +83,70 @@ public class navbar extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_navbar, container, false);
+        bind = FragmentNavbarBinding.inflate(getLayoutInflater());
+        View view = bind.getRoot();
+        return view;
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        MainActivity ma = (MainActivity) getActivity();
+
+
+
+        Toolbar toolbar = bind.toolBar;
+
+       ma.setSupportActionBar(toolbar);
+
+        TabLayout tabs = bind.tabLayout;
+
+        tabs.addTab(tabs.newTab().setText("Restaurents"));
+
+
+        tabs.addTab(tabs.newTab().setText("Orders"));
+
+
+        tabs.addTab(tabs.newTab().setText("Basket"));
+
+
+        tabs.setTabGravity(TabLayout.GRAVITY_FILL);
+
+
+
+        ViewPager viewPager = bind.viewPaper;
+
+
+
+
+
+        Pageadapter tabsAdapter=new Pageadapter(ma.getSupportFragmentManager(), tabs.getTabCount());
+        viewPager.setAdapter(tabsAdapter);
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
+
+
+        tabs.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+    }
+    public void onDestroyView() {
+        super.onDestroyView();
+        bind = null;
+    }
+
+
+
 }

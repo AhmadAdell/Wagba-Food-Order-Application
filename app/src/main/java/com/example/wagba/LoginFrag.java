@@ -87,7 +87,7 @@ fbind.loginbutton.setOnClickListener(view1 ->
 
             FragmentManager fm = ma.getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.logfragmain, new Restfrag());
+            ft.replace(R.id.logfragmain, new navbar());
             ft.commit();
         }
         );
