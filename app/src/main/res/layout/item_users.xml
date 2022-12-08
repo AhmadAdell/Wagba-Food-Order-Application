@@ -23,12 +23,13 @@
 
         <!-- ImageVIew to display our Course Image -->
         <ImageView
-            android:id="@+id/idIVCourseImage"
+            android:id="@+id/cartimg"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_margin="10dp"
             android:contentDescription="@string/app_name"
             android:padding="5dp"
+            android:src="@drawable/kfc"
            />
 
         <!-- Text View to display Course Name -->
@@ -38,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_toEndOf="@id/idIVCourseImage"
+            android:layout_toEndOf="@id/cartimg"
             android:text="course_name"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -53,7 +54,7 @@
             android:layout_below="@id/tv_name"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:layout_toEndOf="@id/idIVCourseImage"
+            android:layout_toEndOf="@id/cartimg"
             android:drawablePadding="2dp"
             android:text="course_rating"
             />

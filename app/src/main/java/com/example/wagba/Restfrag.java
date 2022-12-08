@@ -83,7 +83,7 @@ public class Restfrag extends Fragment {
 
         usersModels.add(new UsersModel("Mac","delicious Burger Sandwiches!"));
         usersModels.add(new UsersModel("KFC","Fried Chicken with a secret recipe!"));
-        usersModels.add(new UsersModel("Abo Mazen","your facorite shawerma!"));
+        usersModels.add(new UsersModel("Abo Mazen","your favorite shawerma!"));
         usersModels.add(new UsersModel("Ezz El Monofy","kebda and sgo2!"));
         usersModels.add(new UsersModel("PaPa Jones","pick your pizza topings!"));
         usersModels.add(new UsersModel("Cinnabon","the Best Cinnamon Roll!"));

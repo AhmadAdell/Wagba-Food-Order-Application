@@ -108,7 +108,7 @@ public class navbar extends Fragment {
         tabs.addTab(tabs.newTab().setText("Orders"));
         tabs.getTabAt(1).setIcon(R.drawable.ic_baseline_list_24);
 
-        tabs.addTab(tabs.newTab().setText("Basket"));
+        tabs.addTab(tabs.newTab().setText("Cart"));
         tabs.getTabAt(2).setIcon(R.drawable.ic_baseline_shopping_cart_24);
 
         tabs.setTabGravity(TabLayout.GRAVITY_FILL);

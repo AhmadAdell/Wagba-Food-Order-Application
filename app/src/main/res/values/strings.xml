@@ -5,4 +5,5 @@
     <string name="logf">Login fragment</string>
     <string name="register">Register</string>
     <string name="login">Log in</string>
+    <string name="checkout">Check out</string>
 </resources>

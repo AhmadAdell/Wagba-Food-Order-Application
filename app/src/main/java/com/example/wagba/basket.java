@@ -1,12 +1,22 @@
 package com.example.wagba;
 
+import android.content.ClipData;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.wagba.databinding.FragmentBasketBinding;
+import com.example.wagba.databinding.FragmentRestfragBinding;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,7 +24,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class basket extends Fragment {
-
+FragmentBasketBinding bind;
+    RecyclerView recyclerView;
+    ArrayList<ItemModel> ItemsModels=new ArrayList<>();
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -59,6 +71,33 @@ public class basket extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_basket, container, false);
+        bind = FragmentBasketBinding.inflate(getLayoutInflater());
+        View view = bind.getRoot();
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        ItemsModels.add(new ItemModel("Mac","delicious Burger Sandwiches!",R.drawable.mac));
+        ItemsModels.add(new ItemModel("KFC","Fried Chicken with a secret recipe!",R.drawable.kfc));
+        ItemsModels.add(new ItemModel("Abo Mazen","your favorite shawerma!",R.drawable.mac));
+        ItemsModels.add(new ItemModel("Ezz El Monofy","kebda and sgo2!",R.drawable.mac));
+        ItemsModels.add(new ItemModel("Ezz El Monofy","kebda and sgo2!",R.drawable.mac));
+        ItemsModels.add(new ItemModel("Ezz El Monofy","kebda and sgo2!",R.drawable.mac));
+
+
+        ItemAdapter itemAdapter=new ItemAdapter(ItemsModels);
+        bind.basketrv.setAdapter(itemAdapter);
+    }
+
+
+
+
+
+    public void onDestroyView() {
+        super.onDestroyView();
+        bind = null;
     }
 }
