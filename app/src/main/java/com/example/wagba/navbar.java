@@ -118,9 +118,6 @@ public class navbar extends Fragment {
         ViewPager viewPager = bind.viewPaper;
 
 
-
-
-
         Pageadapter tabsAdapter=new Pageadapter(ma.getSupportFragmentManager(), tabs.getTabCount());
         viewPager.setAdapter(tabsAdapter);
 

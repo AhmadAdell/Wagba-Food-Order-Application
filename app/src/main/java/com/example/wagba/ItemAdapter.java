@@ -48,7 +48,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.Viewholder> {
         TextView name,age;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
-
             name=itemView.findViewById(R.id.checkouttxt);
             age =itemView.findViewById(R.id.idTVCourseRating);
         }

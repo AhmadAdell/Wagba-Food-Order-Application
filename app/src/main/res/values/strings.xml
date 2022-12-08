@@ -6,4 +6,6 @@
     <string name="register">Register</string>
     <string name="login">Log in</string>
     <string name="checkout">Check out</string>
+    <string name="buttonPlus">+</string>
+    <string name="buttonMinus">-</string>
 </resources>
