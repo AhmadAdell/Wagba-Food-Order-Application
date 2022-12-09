@@ -75,7 +75,7 @@ FragmentOrdersBinding bind;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ordermodel.add(new OrdersModel("Cinnabon","the Best Cinnamon Roll!",R.drawable.kfc));
+        ordermodel.add(new OrdersModel("order #1233","delivered",R.drawable.kfc));
 
 
         OrderAdapter orderadapter=new OrderAdapter(ordermodel);

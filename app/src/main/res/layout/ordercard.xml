@@ -42,7 +42,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@id/cartimg"
-            android:text="course_name"
+            android:text="order no."
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -57,39 +57,10 @@
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/cartimg"
             android:drawablePadding="2dp"
-            android:text="course_rating"
+            android:text="order status"
             />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/idTVCourseRating"
-            android:layout_toEndOf="@id/cartimg"
-            android:backgroundTint="@color/jg"
-            android:text="@string/buttonMinus"
-            android:id="@+id/buttonplus"
-            />
-        <TextView
-            android:paddingTop="16dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/idTVCourseRating"
-            android:layout_toEndOf="@id/buttonplus"
-            android:text="1"
-            android:paddingLeft="8dp"
-            android:textSize="16dp"
-            android:paddingRight="8dp"
-            android:id="@+id/countorder"
-            />
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/idTVCourseRating"
-            android:layout_toEndOf="@id/countorder"
-            android:backgroundTint="@color/jg"
-            android:text="@string/buttonPlus"
-            android:id="@+id/buttonminus"
-            />
+
 
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

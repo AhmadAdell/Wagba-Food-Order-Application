@@ -80,12 +80,11 @@ FragmentBasketBinding bind;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ItemsModels.add(new ItemModel("Mac","delicious Burger Sandwiches!",R.drawable.mac));
-        ItemsModels.add(new ItemModel("KFC","Fried Chicken with a secret recipe!",R.drawable.kfc));
-        ItemsModels.add(new ItemModel("Abo Mazen","your favorite shawerma!",R.drawable.mac));
-        ItemsModels.add(new ItemModel("Ezz El Monofy","kebda and sgo2!",R.drawable.mac));
-        ItemsModels.add(new ItemModel("Ezz El Monofy","kebda and sgo2!",R.drawable.mac));
-        ItemsModels.add(new ItemModel("Ezz El Monofy","kebda and sgo2!",R.drawable.mac));
+        ItemsModels.add(new ItemModel("Shawerma Sandwich","50 EGP",R.drawable.mac));
+        ItemsModels.add(new ItemModel("Garlic Sauce","10 EGP",R.drawable.kfc));
+        ItemsModels.add(new ItemModel("Shawerma Fatta Chicken","100 EGP",R.drawable.mac));
+        ItemsModels.add(new ItemModel("PePsi 1 Litre","20 EGP",R.drawable.mac));
+
 
 
         ItemAdapter itemAdapter=new ItemAdapter(ItemsModels);
