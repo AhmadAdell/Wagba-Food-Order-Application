@@ -1,6 +1,7 @@
 package com.example.wagba;
 
 import android.content.ClipData;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -89,6 +90,17 @@ FragmentBasketBinding bind;
 
         ItemAdapter itemAdapter=new ItemAdapter(ItemsModels);
         bind.basketrv.setAdapter(itemAdapter);
+
+
+
+        bind.checkoutbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent send = new Intent(getActivity(), payment.class);
+                startActivity(send);
+            }
+        });
+
     }
 
 

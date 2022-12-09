@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".dishes"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/checkoutheader"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/customborder"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp"
+            app:cardMaxElevation="8dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- ImageVIew to display our Course Image -->
+
+
+
+                <TextView
+                    android:id="@+id/restname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+
+                    android:text="Your Order from Macdonalds"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/reststatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/restname"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:drawablePadding="2dp"
+                    android:text="#1211"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/orderreset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/customborder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkoutheader"
+
+        app:layout_constraintVertical_bias="0.19999999">
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="5dp"
+            app:cardMaxElevation="8dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+
+
+                <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="2"
+
+                    >
+
+                    <TableRow>
+                        <TextView
+                            android:gravity="left"
+                            android:layout_column="1"
+                            android:text="item"
+                            android:padding="3dip"
+                            android:textStyle="bold"
+                            />
+
+                        <TextView
+                            android:text="Qty"
+                            android:gravity="center"
+                            android:textStyle="bold"/>
+                            />
+
+                        <TextView
+                            android:text="price"
+                            android:gravity="right"
+                            android:paddingRight="3dp"
+                            android:textStyle="bold"/>/>
+
+
+
+
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            android:layout_column="1"
+                            android:text="BIg Mac"
+                            android:padding="3dip" />
+                        <TextView
+                            android:text="1"
+                            android:gravity="center"
+                            />
+                        <TextView
+                            android:text="50"
+                            android:gravity="right"
+                            android:padding="3dip" />
+                    </TableRow>
+
+                    <TableRow>
+                        <TextView
+                            android:layout_column="1"
+                            android:text="Big Tasty"
+                            android:padding="3dip" />
+
+                        <TextView
+                            android:text="1"
+                            android:gravity="center"
+                            />
+
+                        <TextView
+                            android:text="60"
+                            android:gravity="right"
+                            android:padding="3dip" />
+
+                    </TableRow>
+
+
+
+                    <TableRow>
+                        <TextView
+                            android:layout_column="1"
+                            android:text="Sunday Ice cream"
+                            android:padding="3dip" />
+                        <TextView
+                            android:text="1"
+                            android:gravity="center"
+                            />
+                        <TextView
+                            android:text="30"
+                            android:gravity="right"
+                            android:padding="3dip" />
+                    </TableRow>
+
+
+
+                    <View
+                        android:layout_height="2dip"
+                        android:background="#FF909090" />
+
+                    <TableRow>
+                        <TextView
+                            android:layout_column="1"
+                            android:text="Total"
+                            android:padding="3dip" />
+                        <TextView
+                            android:text=""
+                            android:gravity="center"
+                            />
+                        <TextView
+                            android:text="140"
+                            android:gravity="right"
+                            android:padding="3dip" />
+
+                    </TableRow>
+                </TableLayout>
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<androidx.appcompat.widget.AppCompatButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/orderreset"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:backgroundTint="@color/jg"
+    android:text="@string/placeorderbuttton"
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>

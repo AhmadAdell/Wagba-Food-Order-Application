@@ -3,9 +3,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="logf">Login fragment</string>
-    <string name="register">Register</string>
+    <string name="register">Sign Up</string>
     <string name="login">Log in</string>
     <string name="checkout">Check out</string>
     <string name="buttonPlus">+</string>
     <string name="buttonMinus">-</string>
+    <string name="placeorderbuttton">Place order</string>
 </resources>
