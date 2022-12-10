@@ -1,5 +1,6 @@
 package com.example.wagba;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -91,8 +92,12 @@ fbind.loginbutton.setOnClickListener(view1 ->
             ft.commit();
         }
         );
+fbind.registerbutton.setOnClickListener(view1 ->
+        {
+            Intent send = new Intent(getActivity(), signup.class);
+            startActivity(send);
 
-
+        });
     }
     public void onDestroyView() {
         super.onDestroyView();
