@@ -22,7 +22,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.wagba.databinding.FragmentLoginBinding;
+
 import com.example.wagba.databinding.FragmentNavbarBinding;
 
 

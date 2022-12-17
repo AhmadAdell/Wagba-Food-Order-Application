@@ -10,12 +10,12 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/logfragmain"
-        android:name="com.example.wagba.LoginFrag"
+        android:name="com.example.wagba.navbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_navbar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

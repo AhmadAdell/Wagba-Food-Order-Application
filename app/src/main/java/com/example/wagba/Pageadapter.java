@@ -5,9 +5,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 public class Pageadapter extends FragmentStatePagerAdapter {
-
     int nNumOfTabs;
-
     public Pageadapter(FragmentManager fragmentManager, int nNumOfTabs){
         super(fragmentManager);
         this.nNumOfTabs=nNumOfTabs;
