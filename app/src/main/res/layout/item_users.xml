@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/restcard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -34,7 +35,7 @@
 
 
         <TextView
-            android:id="@+id/tv_name"
+            android:id="@+id/rest_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -47,10 +48,10 @@
 
 
         <TextView
-            android:id="@+id/tv_age"
+            android:id="@+id/rest_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_name"
+            android:layout_below="@id/rest_name"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/cartimg"

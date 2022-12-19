@@ -13,6 +13,11 @@ import android.view.ViewGroup;
 
 
 import com.example.wagba.databinding.FragmentRestfragBinding;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -24,8 +29,9 @@ import java.util.ArrayList;
 
 public class Restfrag extends Fragment {
     RecyclerView recyclerView;
-    ArrayList<UsersModel> usersModels=new ArrayList<>();
+    ArrayList<RestaurantModel> restaurantModels =new ArrayList<>();
     FragmentRestfragBinding fbind;
+    DatabaseReference dbref;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,6 +71,9 @@ public class Restfrag extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
     }
 
     @Override
@@ -81,16 +90,38 @@ public class Restfrag extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        usersModels.add(new UsersModel("Mac","delicious Burger Sandwiches!"));
-        usersModels.add(new UsersModel("KFC","Fried Chicken with a secret recipe!"));
-        usersModels.add(new UsersModel("Abo Mazen","your favorite shawerma!"));
-        usersModels.add(new UsersModel("Ezz El Monofy","kebda and sgo2!"));
-        usersModels.add(new UsersModel("PaPa Jones","pick your pizza topings!"));
-        usersModels.add(new UsersModel("Cinnabon","the Best Cinnamon Roll!"));
 
 
-        UsersAdapter usersAdapter=new UsersAdapter(usersModels);
-        fbind.rvUsers.setAdapter(usersAdapter);
+        RestaurantsAdapter restaurantsAdapter =new RestaurantsAdapter(restaurantModels);
+        fbind.rvUsers.setAdapter(restaurantsAdapter);
+        dbref = FirebaseDatabase.getInstance().getReference("restaurants");
+        dbref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                restaurantModels.add(snapshot.getValue(RestaurantModel.class));
+                restaurantsAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
     public void onDestroyView() {
         super.onDestroyView();

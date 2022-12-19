@@ -1,40 +1,37 @@
 package com.example.wagba;
 
 public class DishModel {
-    private String orderno;
-    private String orderstatus;
-    private int order_image;
+    private String dishName;
+    private String dishPrice;
+
 
     // Constructor
-    public DishModel(String orderno, String orderstatus, int course_image) {
-        this.orderno = orderno;
-        this.orderstatus = orderstatus;
-        this.order_image = order_image;
+    public DishModel(String dishName, String dishPrice) {
+        this.dishName = dishName;
+        this.dishPrice = dishPrice;
+
+    }
+
+    public DishModel() {
     }
 
     // Getter and Setter
-    public String getOrderno() {
-        return orderno;
+
+    public void setDishName(String dishName) {
+        this.dishName = dishName;
+    }
+    public void setDishPrice(String dishPrice) {
+        this.dishPrice = dishPrice;
     }
 
-    public void setOrderno(String course_name) {
-        this.orderno = course_name;
+    public String getDishName() {
+        return dishName;
     }
 
-    public String getOrderstatus() {
-        return orderstatus;
+    public String getDishPrice() {
+        return dishPrice;
     }
 
-    public void setOrderstatus(String course_rating) {
-        this.orderstatus = course_rating;
-    }
 
-    public int getOrder_image() {
-        return order_image;
-    }
-
-    public void setOrder_image(int course_image) {
-        this.order_image = course_image;
-    }
 
 }

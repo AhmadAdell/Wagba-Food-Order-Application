@@ -41,8 +41,8 @@ ArrayList<DishModel> dishmodelsinternal;
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
 
         DishModel dishModel =dishmodelsinternal.get(position);
-        holder.san_name.setText(dishModel.getOrderno());
-        holder.san_price.setText(dishModel.getOrderstatus());
+        holder.san_name.setText(dishModel.getDishName());
+        holder.san_price.setText(dishModel.getDishPrice());
 
 
     }
