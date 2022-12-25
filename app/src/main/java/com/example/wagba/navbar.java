@@ -25,12 +25,6 @@ import android.view.ViewGroup;
 
 import com.example.wagba.databinding.FragmentNavbarBinding;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link navbar#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class navbar extends Fragment {
  FragmentNavbarBinding bind;
 
@@ -112,12 +106,7 @@ public class navbar extends Fragment {
         tabs.getTabAt(2).setIcon(R.drawable.ic_baseline_shopping_cart_24);
 
         tabs.setTabGravity(TabLayout.GRAVITY_FILL);
-
-
-
         ViewPager viewPager = bind.viewPaper;
-
-
         Pageadapter tabsAdapter=new Pageadapter(ma.getSupportFragmentManager(), tabs.getTabCount());
         viewPager.setAdapter(tabsAdapter);
 
@@ -144,7 +133,5 @@ public class navbar extends Fragment {
         super.onDestroyView();
         bind = null;
     }
-
-
 
 }

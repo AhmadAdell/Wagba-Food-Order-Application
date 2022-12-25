@@ -30,6 +30,7 @@ ActivityMainBinding binding;
             Intent send = new Intent(this, LoginActivity.class);
             startActivity(send);
         }
+
     }
 
     @Override

@@ -37,6 +37,4 @@ public class OrdersModel {
         this.order_image = course_image;
     }
 
-
-
 }

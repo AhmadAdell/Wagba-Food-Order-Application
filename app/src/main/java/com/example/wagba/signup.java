@@ -62,14 +62,5 @@ ActivitySignupBinding bind;
             }
         });
 
-
-
-
-
-
-
     }
-
-
-
 }

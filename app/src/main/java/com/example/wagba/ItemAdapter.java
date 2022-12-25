@@ -35,7 +35,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.Viewholder> {
         ItemModel ItemModel=   ItemsModelsinternal.get(position);
         holder.name.setText(ItemModel.getCourse_name());
         holder.age.setText(ItemModel.getCourse_rating());
-
     }
 
     @Override

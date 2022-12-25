@@ -21,11 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Restfrag#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 
 public class Restfrag extends Fragment {
     RecyclerView recyclerView;
@@ -46,15 +42,6 @@ public class Restfrag extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment Restfrag.
-     */
-    // TODO: Rename and change types and number of parameters
     public static Restfrag newInstance(String param1, String param2) {
         Restfrag fragment = new Restfrag();
         Bundle args = new Bundle();
