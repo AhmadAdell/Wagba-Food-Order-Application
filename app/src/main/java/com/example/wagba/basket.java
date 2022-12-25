@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 
 import com.example.wagba.databinding.FragmentBasketBinding;
 import com.example.wagba.databinding.FragmentRestfragBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -86,6 +87,15 @@ FragmentBasketBinding bind;
             public void onClick(View v) {
                 Intent send = new Intent(getActivity(), payment.class);
                 startActivity(send);
+            }
+        });
+        bind.logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent login = new Intent(getContext(), MainActivity.class);
+                startActivity(login);
+                getActivity().finish();
             }
         });
 

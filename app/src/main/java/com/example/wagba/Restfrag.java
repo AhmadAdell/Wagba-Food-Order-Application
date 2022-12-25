@@ -1,5 +1,6 @@
 package com.example.wagba;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 
 
 import com.example.wagba.databinding.FragmentRestfragBinding;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +30,7 @@ public class Restfrag extends Fragment {
     ArrayList<RestaurantModel> restaurantModels =new ArrayList<>();
     FragmentRestfragBinding fbind;
     DatabaseReference dbref;
+    private FirebaseAuth mAuth;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,7 +69,7 @@ public class Restfrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        mAuth = FirebaseAuth.getInstance();
         // Inflate the layout for this fragment
         fbind = FragmentRestfragBinding.inflate(getLayoutInflater());
         View view = fbind.getRoot();
@@ -109,6 +112,16 @@ public class Restfrag extends Fragment {
 
             }
         });
+        fbind.logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent login = new Intent(getContext(), MainActivity.class);
+                startActivity(login);
+                getActivity().finish();
+            }
+        });
+
     }
     public void onDestroyView() {
         super.onDestroyView();

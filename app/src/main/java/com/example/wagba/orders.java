@@ -1,5 +1,6 @@
 package com.example.wagba;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.wagba.databinding.FragmentOrdersBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -65,6 +67,17 @@ FragmentOrdersBinding bind;
 
         OrderAdapter orderadapter=new OrderAdapter(ordermodel);
         bind.ordersrv.setAdapter(orderadapter);
+
+
+        bind.logoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                Intent login = new Intent(getContext(), MainActivity.class);
+                startActivity(login);
+                getActivity().finish();
+            }
+        });
 
 
     }

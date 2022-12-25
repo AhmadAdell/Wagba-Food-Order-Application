@@ -21,6 +21,18 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_baseline_logout_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/logout_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp" />
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
