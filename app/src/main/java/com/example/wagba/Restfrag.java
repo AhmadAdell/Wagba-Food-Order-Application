@@ -31,6 +31,7 @@ public class Restfrag extends Fragment {
     FragmentRestfragBinding fbind;
     DatabaseReference dbref;
     private FirebaseAuth mAuth;
+    private basketholder bh;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,6 +71,8 @@ public class Restfrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
+        bh = basketholder.getinstance();
+
         // Inflate the layout for this fragment
         fbind = FragmentRestfragBinding.inflate(getLayoutInflater());
         View view = fbind.getRoot();

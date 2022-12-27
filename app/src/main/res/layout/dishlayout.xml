@@ -62,7 +62,7 @@
             android:layout_toEndOf="@id/cartimg"
             android:backgroundTint="@color/jg"
             android:text="@string/buttonMinus"
-            android:id="@+id/buttonplus"
+            android:id="@+id/buttonminus"
 
             />
         <TextView
@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/sprice"
-            android:layout_toEndOf="@id/buttonplus"
+            android:layout_toEndOf="@id/buttonminus"
             android:text="1"
             android:paddingLeft="8dp"
             android:textSize="16dp"
@@ -84,7 +84,7 @@
             android:layout_toEndOf="@id/countorder"
             android:backgroundTint="@color/jg"
             android:text="@string/buttonPlus"
-            android:id="@+id/buttonminus"
+            android:id="@+id/buttonplus"
             />
 
     </RelativeLayout>

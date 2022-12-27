@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public class basket extends Fragment {
 FragmentBasketBinding bind;
     RecyclerView recyclerView;
-    ArrayList<ItemModel> ItemsModels=new ArrayList<>();
+    ArrayList<DishModel> ItemsModels=new ArrayList<>();
 
 
     private static final String ARG_PARAM1 = "param1";
@@ -69,16 +69,12 @@ FragmentBasketBinding bind;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        ItemsModels.add(new ItemModel("Shawerma Sandwich","50 EGP",R.drawable.mac));
-        ItemsModels.add(new ItemModel("Garlic Sauce","10 EGP",R.drawable.kfc));
-        ItemsModels.add(new ItemModel("Shawerma Fatta Chicken","100 EGP",R.drawable.mac));
-        ItemsModels.add(new ItemModel("PePsi 1 Litre","20 EGP",R.drawable.mac));
+     ItemsModels = basketholder.getinstance().getItemsModels();
 
 
-
-        ItemAdapter itemAdapter=new ItemAdapter(ItemsModels);
-        bind.basketrv.setAdapter(itemAdapter);
+DIshAdapter dIshAdapter = new DIshAdapter(ItemsModels);
+       // ItemAdapter itemAdapter=new ItemAdapter(ItemsModels);
+        bind.basketrv.setAdapter(dIshAdapter);
 
 
 
