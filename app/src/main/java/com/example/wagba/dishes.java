@@ -42,7 +42,7 @@ ActivityDishesBinding bind;
 
 
 
-        DIshAdapter dIshAdapter=new DIshAdapter(dishmodel);
+        DIshAdapter dIshAdapter=new DIshAdapter(dishmodel,restuarantName);
         bind.dishesrv.setAdapter(dIshAdapter);
         dbref = FirebaseDatabase.getInstance().getReference("dishes").child(restuarantid);
         dbref.addChildEventListener(new ChildEventListener() {

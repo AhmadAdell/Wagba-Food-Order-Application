@@ -20,6 +20,7 @@ public class DishModel {
     public void setDishName(String dishName) {
         this.dishName = dishName;
     }
+
     public void setDishPrice(String dishPrice) {
         this.dishPrice = dishPrice;
     }

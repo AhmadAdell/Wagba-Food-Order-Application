@@ -1,5 +1,7 @@
 package com.example.wagba;
 
+import android.widget.ImageView;
+
 public class RestaurantModel {
     private String name;
     private String status;
@@ -13,6 +15,14 @@ public class RestaurantModel {
 
     public RestaurantModel() {
     }
+
+
+//    public void loadPic(ImageView imageView, Context context){
+//        storageReference = FirebaseStorage.getInstance().getReference().child("Dishes");
+//        Glide.with(context)
+//                .load(storageReference.child(this.id+".jpg"))
+//                .into(imageView);
+//    }
 
     public String getName() {
         return name;

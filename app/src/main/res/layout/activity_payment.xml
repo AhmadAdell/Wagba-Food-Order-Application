@@ -110,112 +110,125 @@
 
 
 
-                <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:paddingHorizontal="8dp"
+                    android:id="@+id/payment_details_block"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:stretchColumns="2"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
 
                     >
-
-                    <TableRow>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="payment details"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="25dp"
+                        />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        >
                         <TextView
-                            android:gravity="left"
-                            android:layout_column="1"
-                            android:text="item"
-                            android:padding="3dip"
+                            android:id="@+id/subtotaltext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16dp"
+                            android:text="sub total"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/subtotal"
+                            android:textSize="16dp"
+                            android:text=" 215.76"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        >
+                        <TextView
+                            android:id="@+id/tax_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16dp"
+                            android:text="tax"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/tax"
+                            android:textSize="16dp"
+                            android:text=" 20.00"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        >
+                        <TextView
+                            android:id="@+id/delivery_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16dp"
+                            android:text="delivery fee"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/deliveryfees"
+                            android:textSize="16dp"
+                            android:text=" 25.32"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        >
+                        <TextView
+                            android:id="@+id/total_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16dp"
+                            android:text="Total"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
                             android:textStyle="bold"
                             />
-
                         <TextView
-                            android:text="Qty"
-                            android:gravity="center"
-                            android:textStyle="bold"/>
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/total"
+                            android:textSize="16dp"
+                            android:text=" 241.08"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            android:textStyle="bold"
                             />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <TextView
-                            android:text="price"
-                            android:gravity="right"
-                            android:paddingRight="3dp"
-                            android:textStyle="bold"/>/>
-
-
-
-
-                    </TableRow>
-
-                    <TableRow>
-                        <TextView
-                            android:layout_column="1"
-                            android:text="BIg Mac"
-                            android:padding="3dip" />
-                        <TextView
-                            android:text="1"
-                            android:gravity="center"
-                            />
-                        <TextView
-                            android:text="50"
-                            android:gravity="right"
-                            android:padding="3dip" />
-                    </TableRow>
-
-                    <TableRow>
-                        <TextView
-                            android:layout_column="1"
-                            android:text="Big Tasty"
-                            android:padding="3dip" />
-
-                        <TextView
-                            android:text="1"
-                            android:gravity="center"
-                            />
-
-                        <TextView
-                            android:text="60"
-                            android:gravity="right"
-                            android:padding="3dip" />
-
-                    </TableRow>
-
-
-
-                    <TableRow>
-                        <TextView
-                            android:layout_column="1"
-                            android:text="Sunday Ice cream"
-                            android:padding="3dip" />
-                        <TextView
-                            android:text="1"
-                            android:gravity="center"
-                            />
-                        <TextView
-                            android:text="30"
-                            android:gravity="right"
-                            android:padding="3dip" />
-                    </TableRow>
-
-
-
-                    <View
-                        android:layout_height="2dip"
-                        android:background="#FF909090" />
-
-                    <TableRow>
-                        <TextView
-                            android:layout_column="1"
-                            android:text="Total"
-                            android:padding="3dip" />
-                        <TextView
-                            android:text=""
-                            android:gravity="center"
-                            />
-                        <TextView
-                            android:text="140"
-                            android:gravity="right"
-                            android:padding="3dip" />
-
-                    </TableRow>
-                </TableLayout>
-
+                </androidx.appcompat.widget.LinearLayoutCompat>
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -229,6 +242,7 @@
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/jg"
         android:text="@string/placeorderbuttton"
+        android:id="@+id/checkbut"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

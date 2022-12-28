@@ -40,8 +40,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.Viewholder> 
     @Override
     public void onBindViewHolder(@NonNull OrderAdapter.Viewholder holder, int position) {
         OrdersModel ordersmodels =ordersModelsinternal.get(position);
-        holder.orderno.setText(ordersmodels.getOrderno());
-        holder.orderstatus.setText(ordersmodels.getOrderstatus());
+        holder.orderno.setText(ordersmodels.getOrderPrice());
+        holder.orderstatus.setText(ordersmodels.getOrderStatus());
     }
 
     @Override

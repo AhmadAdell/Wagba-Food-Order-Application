@@ -1,40 +1,35 @@
 package com.example.wagba;
 
 public class OrdersModel {
-    private String orderno;
-    private String orderstatus;
-    private int order_image;
+    private String orderPrice;
+    private String orderStatus;
+
 
     // Constructor
-    public OrdersModel(String orderno, String orderstatus, int course_image) {
-        this.orderno = orderno;
-        this.orderstatus = orderstatus;
-        this.order_image = order_image;
+    public OrdersModel(String orderPrice, String orderStatus) {
+        this.orderPrice = orderPrice;
+        this.orderStatus = orderStatus;
     }
+    public OrdersModel() {
 
+    }
     // Getter and Setter
-    public String getOrderno() {
-        return orderno;
+    public String getOrderPrice() {
+        return orderPrice;
     }
 
-    public void setOrderno(String course_name) {
-        this.orderno = course_name;
+    public void setOrderPrice(String course_name) {
+        this.orderPrice = course_name;
     }
 
-    public String getOrderstatus() {
-        return orderstatus;
+    public String getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setOrderstatus(String course_rating) {
-        this.orderstatus = course_rating;
+    public void setOrderStatus(String course_rating) {
+        this.orderStatus = course_rating;
     }
 
-    public int getOrder_image() {
-        return order_image;
-    }
 
-    public void setOrder_image(int course_image) {
-        this.order_image = course_image;
-    }
 
 }

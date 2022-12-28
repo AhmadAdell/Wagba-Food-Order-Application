@@ -35,10 +35,14 @@ public class RestaurantsAdapter extends RecyclerView.Adapter<RestaurantsAdapter.
     }
 
     @Override
+
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
+
         RestaurantModel restaurantModel =   restaurantModelsinternal.get(position);
         holder.bind.restName.setText(restaurantModel.getName());
         holder.bind.restStatus.setText(restaurantModel.getStatus());
+
+        //restaurantModel.loadPic(holder.bind.cartimg,holder.bind.getRoot().getContext());
         holder.bind.getRoot().setOnClickListener(view ->{
             Context context = view.getContext();
             Intent intent = new Intent(context, dishes.class);
@@ -61,11 +65,11 @@ public class RestaurantsAdapter extends RecyclerView.Adapter<RestaurantsAdapter.
 
     public class Viewholder extends RecyclerView.ViewHolder{
        ItemUsersBinding bind;
-        TextView name,age;
+        Context context;
         public Viewholder(ItemUsersBinding bind) {
             super(bind.getRoot());
              this.bind=bind;
-
+            //context = bind.getRoot().getContext();
         }
     }
 }

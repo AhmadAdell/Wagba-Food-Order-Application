@@ -17,8 +17,16 @@ import java.util.ArrayList;
 public class DIshAdapter extends RecyclerView.Adapter<DIshAdapter.Viewholder> {
 ArrayList<DishModel> dishmodelsinternal;
 basketholder bh;
+String restid ;
     public DIshAdapter(ArrayList<DishModel> Dishmodels) {
         this.dishmodelsinternal = Dishmodels;
+    }
+
+
+
+    public DIshAdapter(ArrayList<DishModel> Dishmodels,String restid) {
+        this.dishmodelsinternal = Dishmodels;
+        this.restid = restid;
     }
 
     @NonNull
@@ -51,9 +59,14 @@ basketholder bh;
         holder.san_price.setText(dishModel.getDishPrice());
         holder.butp.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
+
                 basketholder.getinstance().additem(dishModel);
+                basketholder.getinstance().setRestid(restid);
+
             }
+
         });
 
 

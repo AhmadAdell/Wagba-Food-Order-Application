@@ -14,6 +14,11 @@ import android.view.ViewGroup;
 
 import com.example.wagba.databinding.FragmentOrdersBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -22,7 +27,7 @@ public class orders extends Fragment {
 FragmentOrdersBinding bind;
     RecyclerView recyclerView;
     ArrayList<OrdersModel> ordermodel=new ArrayList<>();
-
+    DatabaseReference dbref;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private String mParam1;
@@ -62,13 +67,44 @@ FragmentOrdersBinding bind;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ordermodel.add(new OrdersModel("order #1233","delivered",R.drawable.kfc));
 
 
         OrderAdapter orderadapter=new OrderAdapter(ordermodel);
         bind.ordersrv.setAdapter(orderadapter);
+        dbref = FirebaseDatabase.getInstance().getReference("Orders").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        dbref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//                for (DataSnapshot child : snapshot.getChildren()) {
+//
+//
+//                    ordermodel.add(child.getValue(OrdersModel.class));
+//
+//                }
+                ordermodel.add(snapshot.getValue(OrdersModel.class));
+                orderadapter.notifyDataSetChanged();
+            }
 
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Iterable<DataSnapshot>  iterable= snapshot.getChildren();
+            }
 
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         bind.logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

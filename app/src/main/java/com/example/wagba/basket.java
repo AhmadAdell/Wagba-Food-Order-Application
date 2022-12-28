@@ -10,19 +10,25 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.wagba.databinding.FragmentBasketBinding;
 import com.example.wagba.databinding.FragmentRestfragBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.ArrayList;
 
 
 public class basket extends Fragment {
 FragmentBasketBinding bind;
+DatabaseReference dref;
+TextView tprice;
+float pricecalc ;
     RecyclerView recyclerView;
     ArrayList<DishModel> ItemsModels=new ArrayList<>();
 
@@ -61,6 +67,7 @@ FragmentBasketBinding bind;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         bind = FragmentBasketBinding.inflate(getLayoutInflater());
         View view = bind.getRoot();
         return view;
@@ -70,9 +77,18 @@ FragmentBasketBinding bind;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
      ItemsModels = basketholder.getinstance().getItemsModels();
-
-
+        tprice = bind.tprice;
+        pricecalc = 0;
 DIshAdapter dIshAdapter = new DIshAdapter(ItemsModels);
+for (int i=0;i<ItemsModels.size(); i++)
+{
+    pricecalc += Float.valueOf(ItemsModels.get(i).getDishPrice());
+
+}
+
+tprice.setText(Float.toString(pricecalc));
+
+
        // ItemAdapter itemAdapter=new ItemAdapter(ItemsModels);
         bind.basketrv.setAdapter(dIshAdapter);
 
@@ -82,6 +98,8 @@ DIshAdapter dIshAdapter = new DIshAdapter(ItemsModels);
             @Override
             public void onClick(View v) {
                 Intent send = new Intent(getActivity(), payment.class);
+                send.putExtra("total price",tprice.getText().toString());
+                Log.d("ahmed123",tprice.getText().toString());
                 startActivity(send);
             }
         });
@@ -90,8 +108,9 @@ DIshAdapter dIshAdapter = new DIshAdapter(ItemsModels);
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Intent login = new Intent(getContext(), MainActivity.class);
+
                 startActivity(login);
-                getActivity().finish();
+               getActivity().finish();
             }
         });
 
