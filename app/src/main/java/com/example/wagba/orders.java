@@ -75,12 +75,7 @@ FragmentOrdersBinding bind;
         dbref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-//                for (DataSnapshot child : snapshot.getChildren()) {
-//
-//
-//                    ordermodel.add(child.getValue(OrdersModel.class));
-//
-//                }
+
                 ordermodel.add(snapshot.getValue(OrdersModel.class));
                 orderadapter.notifyDataSetChanged();
             }

@@ -40,11 +40,21 @@ ActivityMainBinding binding;
        View view = binding.getRoot();
         setContentView(view);
         mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
 
-        FragmentManager fm =getSupportFragmentManager();
-        FragmentTransaction ft=fm.beginTransaction();
-        ft.replace(R.id.logfragmain,new navbar());
-        ft.commit();
+            FragmentManager fm =getSupportFragmentManager();
+            FragmentTransaction ft=fm.beginTransaction();
+            ft.replace(R.id.logfragmain,new navbar());
+            ft.commit();
+        }
+        else
+        {
+            Intent send = new Intent(this, LoginActivity.class);
+            startActivity(send);
+
+        }
+
 
     }
 }

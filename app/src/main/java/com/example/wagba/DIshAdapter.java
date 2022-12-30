@@ -18,6 +18,7 @@ public class DIshAdapter extends RecyclerView.Adapter<DIshAdapter.Viewholder> {
 ArrayList<DishModel> dishmodelsinternal;
 basketholder bh;
 String restid ;
+    float countitem ;
     public DIshAdapter(ArrayList<DishModel> Dishmodels) {
         this.dishmodelsinternal = Dishmodels;
     }
@@ -41,7 +42,7 @@ String restid ;
     }
     public class Viewholder extends RecyclerView.ViewHolder{
         DishlayoutBinding bind;
-        TextView san_name, san_price;
+        TextView san_name, san_price,countorder;
         Button butp , butm;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
@@ -49,6 +50,7 @@ String restid ;
             san_name =itemView.findViewById(R.id.sandwich_name);
             san_price =itemView.findViewById(R.id.sprice);
             butp = itemView.findViewById(R.id.buttonplus);
+            countorder = itemView.findViewById(R.id.countorder);
 
         }}
     @Override
@@ -61,7 +63,8 @@ String restid ;
             @Override
 
             public void onClick(View v) {
-
+                countitem++;
+                holder.countorder.setText(Float.toString(countitem));
                 basketholder.getinstance().additem(dishModel);
                 basketholder.getinstance().setRestid(restid);
 
