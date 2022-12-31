@@ -87,5 +87,17 @@
             android:id="@+id/buttonplus"
             />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:layout_below="@id/sprice"
+            android:layout_toEndOf="@id/buttonplus"
+            android:backgroundTint="@color/jg"
+            android:text="@string/cartbutton"
+            android:id="@+id/buttoncart"
+            />
+
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

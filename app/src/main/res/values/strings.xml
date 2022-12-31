@@ -11,4 +11,5 @@
     <string name="buttonPlus">+</string>
     <string name="buttonMinus">-</string>
     <string name="placeorderbuttton">Place order</string>
+    <string name="cartbutton">add to cart</string>
 </resources>

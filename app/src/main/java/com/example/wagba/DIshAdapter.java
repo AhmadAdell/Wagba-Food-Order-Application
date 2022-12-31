@@ -43,7 +43,7 @@ String restid ;
     public class Viewholder extends RecyclerView.ViewHolder{
         DishlayoutBinding bind;
         TextView san_name, san_price,countorder;
-        Button butp , butm;
+        Button butp , butm,cartbutton;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
 
@@ -51,6 +51,7 @@ String restid ;
             san_price =itemView.findViewById(R.id.sprice);
             butp = itemView.findViewById(R.id.buttonplus);
             countorder = itemView.findViewById(R.id.countorder);
+            cartbutton = itemView.findViewById(R.id.buttoncart);
 
         }}
     @Override
@@ -65,11 +66,17 @@ String restid ;
             public void onClick(View v) {
                 countitem++;
                 holder.countorder.setText(Float.toString(countitem));
-                basketholder.getinstance().additem(dishModel);
-                basketholder.getinstance().setRestid(restid);
+
 
             }
 
+        });
+        holder.cartbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                basketholder.getinstance().additem(dishModel);
+                basketholder.getinstance().setRestid(restid);
+            }
         });
 
 
