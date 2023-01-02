@@ -47,7 +47,8 @@ ActivityPaymentBinding bind;
                         .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
                 DatabaseReference dref = ref.push();
-                dref.setValue(new OrdersModel( "order placed from " + basketholder.getinstance().getRestid(),"total price : " + calctotal));
+                String id = dref.getKey();
+                dref.setValue(new OrdersModel( "order placed from " + basketholder.getinstance().getRestid(),"total price : " + calctotal,id));
 
                 finish();
             }

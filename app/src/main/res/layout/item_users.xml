@@ -33,7 +33,7 @@
             android:layout_marginBottom="10dp"
             android:contentDescription="@string/app_name"
             android:padding="5dp"
-            android:src="@drawable/kfc" />
+            android:src="@drawable/restauranticon" />
 
 
         <TextView

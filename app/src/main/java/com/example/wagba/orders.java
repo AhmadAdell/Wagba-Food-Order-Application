@@ -82,7 +82,9 @@ FragmentOrdersBinding bind;
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Iterable<DataSnapshot>  iterable= snapshot.getChildren();
+
+
+                orderadapter.notifyDataSetChanged();
             }
 
             @Override

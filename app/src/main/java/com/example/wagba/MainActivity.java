@@ -50,6 +50,7 @@ ActivityMainBinding binding;
         }
         else
         {
+            finish();
             Intent send = new Intent(this, LoginActivity.class);
             startActivity(send);
 

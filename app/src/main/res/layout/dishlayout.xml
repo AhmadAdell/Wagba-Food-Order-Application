@@ -23,7 +23,7 @@
             android:layout_margin="10dp"
             android:contentDescription="@string/app_name"
             android:padding="5dp"
-            android:src="@drawable/tasty"
+            android:src="@drawable/menuitem"
 
             />
 
