@@ -1,7 +1,7 @@
 package com.example.wagba;
 
 public class OrdersModel {
-    private String orderPrice;
+    public String orderPrice;
     private String orderStatus;
     String id;
 

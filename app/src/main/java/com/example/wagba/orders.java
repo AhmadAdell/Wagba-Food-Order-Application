@@ -82,8 +82,16 @@ FragmentOrdersBinding bind;
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-
+                OrdersModel orderItemModel = snapshot.getValue(OrdersModel.class);
+                for (int i = 0; i < ordermodel.size(); i++) {
+                    if (ordermodel.get(i).id.equals(orderItemModel.id)) {
+                        if (ordermodel.get(i).orderPrice != orderItemModel.getOrderPrice()) {
+                            ordermodel.get(i).orderPrice = orderItemModel.getOrderPrice();
+                            orderadapter.notifyItemChanged(i);
+                        }
+                        break;
+                    }
+                }
                 orderadapter.notifyDataSetChanged();
             }
 

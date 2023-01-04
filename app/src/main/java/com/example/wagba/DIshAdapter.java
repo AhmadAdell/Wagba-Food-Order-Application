@@ -18,7 +18,7 @@ public class DIshAdapter extends RecyclerView.Adapter<DIshAdapter.Viewholder> {
 ArrayList<DishModel> dishmodelsinternal;
 basketholder bh;
 String restid ;
-    float countitem ;
+    float countitem = 0;
     public DIshAdapter(ArrayList<DishModel> Dishmodels) {
         this.dishmodelsinternal = Dishmodels;
     }
@@ -76,6 +76,7 @@ String restid ;
             public void onClick(View v) {
                 basketholder.getinstance().additem(dishModel);
                 basketholder.getinstance().setRestid(restid);
+                countitem = 0;
             }
         });
 
